@@ -19,7 +19,9 @@ WORKDIR /tmp
 COPY ./build.sh /tmp/
 
 RUN chmod +x build.sh && \
-  echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p \
+  echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p && \
   ./build.sh $PI_VERSION
 
-ENTRYPOINT ENTRYPOINT ["/usr/bin/exagear"]
+COPY ./start.sh /
+
+ENTRYPOINT ENTRYPOINT ["/start.sh"]

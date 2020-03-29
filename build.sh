@@ -18,11 +18,11 @@ esac
 
 echo "Downloading..."
 
-wget $URL
+wget -O exagear.tar.gz $URL
 
 echo "Extracting..."
 
-tar xvzf $EXAGEAR
+tar xvzf exagear.tar.gz
 
 echo "Installing..."
 
