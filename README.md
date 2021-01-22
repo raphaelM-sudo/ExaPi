@@ -3,8 +3,9 @@ Dockerized ExaGear image for Raspberry Pi 1, 2, 3 and 4.
 
 ## Usage
 ```
-docker build --build-arg PI_VERSION=<RASPI VERSION (1, 2, 3 or 4)> .
-docker up .
+docker build -t exapi --build-arg PI_VERSION=<RASPI VERSION (1, 2, 3 or 4)> .
+Optionally to just run the Image:
+docker run -it --entrypoint /bin/bash exapi:latest
 ```
 
 ## Usage as Base Image
